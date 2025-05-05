@@ -1,0 +1,122 @@
+[
+    {
+        "id": 5,
+        "title": "Burbuja",
+        "year": "2025",
+        "type": "documentary",
+        "role": "soundRecordist",
+        "posterUrl": "/images/posters/burbuja.png"
+    },
+    {
+        "id": 12,
+        "title": "Es copia fiel",
+        "year": "2025",
+        "type": "shortFilm",
+        "role": "foleyEditor",
+        "posterUrl": "/images/posters/copia_fiel.png"
+    },
+    {
+        "id": 1,
+        "title": "Pago con sangre",
+        "year": "2024",
+        "type": "shortFilm",
+        "role": "soundRecordist",
+        "posterUrl": "/images/posters/pago_con_sangre.jpeg"
+    },
+    {
+        "id": 3,
+        "title": "El Encargado. Temporada 3",
+        "year": "2024",
+        "type": "tvShow",
+        "role": "boomOperator",
+        "posterUrl": "/images/posters/el_encargado.png"
+    },
+    {
+        "id": 4,
+        "title": "Envidiosa. Temporada 2",
+        "year": "2024",
+        "type": "tvShow",
+        "role": "boomOperator",
+        "posterUrl": "/images/posters/envidiosa.png"
+    },
+    {
+        "id": 6,
+        "title": "Romina Smile",
+        "year": "2024",
+        "type": "featureFilm",
+        "role": "boomOperator",
+        "posterUrl": "/images/posters/romina_smile.png"
+    },
+    {
+        "id": 8,
+        "title": "Feat",
+        "year": "2024",
+        "type": "realityShow",
+        "role": "soundRecordist",
+        "posterUrl": "/images/posters/feat.png"
+    },
+    {
+        "id": 9,
+        "title": "SportCenter",
+        "year": "2024",
+        "type": "tvShow",
+        "role": "boomOperator",
+        "posterUrl": "/images/posters/sportcenter.jpg"
+    },
+    {
+        "id": 10,
+        "title": "Ara San Juan: El submarino que desapareció",
+        "year": "2024",
+        "type": "documentary",
+        "role": "soundRecordist",
+        "posterUrl": "/images/posters/ara_san_juan.png"
+    },
+    {
+        "id": 13,
+        "title": "Las Leguas",
+        "year": "2024",
+        "type": "featureFilm",
+        "role": "foleyEditor",
+        "posterUrl": "/images/posters/leguas.png"
+    },
+    {
+        "id": 2,
+        "title": "La idea de Dios",
+        "year": "2023",
+        "type": "featureFilm",
+        "role": "soundRecordist",
+        "posterUrl": "/images/posters/idea_de_dios.png"
+    },
+    {
+        "id": 7,
+        "title": "Master Chef",
+        "year": "2023",
+        "type": "realityShow",
+        "role": "boomOperator",
+        "posterUrl": "/images/posters/masterchef.png"
+    },
+    {
+        "id": 11,
+        "title": "Desamparados bajo el agua",
+        "year": "2023",
+        "type": "documentary",
+        "role": "soundRecordist",
+        "posterUrl": "/images/posters/desamparados.png"
+    },
+    {
+        "id": 14,
+        "title": "ARDE: La llama de los feminismos bonaerenses",
+        "year": "2023",
+        "type": "tvDocumentary",
+        "role": "soundRecordist",
+        "posterUrl": "/images/posters/arde.png"
+    },
+    {
+        "id": 15,
+        "title": "Con la fuerza del río",
+        "year": "2022",
+        "type": "documentary",
+        "role": "soundRecordist",
+        "posterUrl": "/images/posters/fuerza_del_rio.png"
+    }
+]

@@ -1,0 +1,72 @@
+"use client"
+
+import { useState } from "react"
+import Header from "./components/Header"
+import AboutTab from "./components/AboutTab"
+import CVTab from "./components/CVTab"
+import PicturesTab from "./components/PicturesTab"
+import ContactTab from "./components/ContactTab"
+import { LanguageProvider } from "./contexts/LanguageContext"
+import { useLanguage } from "./contexts/LanguageContext"
+
+// Tab navigation component
+function TabNavigation({ activeTab, setActiveTab }) {
+  const { translations } = useLanguage()
+
+  const tabs = [
+    { id: "about", label: translations.about },
+    { id: "cv", label: translations.cv },
+    { id: "pictures", label: translations.pictures },
+    //{ id: "contact", label: translations.contact },
+  ]
+
+  return (
+    <div className="border-b border-gray-200 mt-6">
+      <nav className="flex -mb-px">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`py-4 px-6 font-medium text-sm border-b-2 ${
+              activeTab === tab.id
+                ? "border-blue-700 text-blue-700"
+                : "border-transparent text-gray-500 hover:text-blue-700"
+            }`}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </nav>
+    </div>
+  )
+}
+
+// Main app component
+function AppContent() {
+  const [activeTab, setActiveTab] = useState("about")
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <div className="container mx-auto px-4 py-8">
+        <Header />
+        <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
+
+        {/* Tab Content */}
+        <div className="mt-8 bg-white rounded-lg shadow-md p-6">
+          {activeTab === "about" && <AboutTab />}
+          {activeTab === "cv" && <CVTab />}
+          {activeTab === "pictures" && <PicturesTab />}
+          {activeTab === "contact" && <ContactTab />}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
+  )
+}

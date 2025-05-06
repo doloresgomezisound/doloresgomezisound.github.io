@@ -17,17 +17,17 @@ function TabNavigation({ activeTab, setActiveTab }) {
     { id: "about", label: translations.about },
     { id: "cv", label: translations.cv },
     { id: "pictures", label: translations.pictures },
-    //{ id: "contact", label: translations.contact },
+    { id: "contact", label: translations.contact },
   ]
 
   return (
     <div className="border-b border-gray-200 mt-6">
-      <nav className="flex -mb-px">
+      <nav className="flex w-full -mb-px">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`py-4 px-6 font-medium text-sm border-b-2 ${
+            className={`py-2 md:py-4 px-2 md:px-6 flex-1 font-medium text-xs md:text-sm border-b-2 text-center ${
               activeTab === tab.id
                 ? "border-blue-700 text-blue-700"
                 : "border-transparent text-gray-500 hover:text-blue-700"

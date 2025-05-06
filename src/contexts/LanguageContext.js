@@ -50,6 +50,7 @@ const en = {
   realityShow: "Reality Show",
   tvDocumentary: "TV Documentary",
   linkedin: "LinkedIn Profile",
+  contactMe: "Contact via email",
 }
 
 // Spanish translations
@@ -101,6 +102,7 @@ const es = {
   realityShow: "Reality Show",
   tvDocumentary: "Documental de TV",
   linkedin: "Perfil de LinkedIn",
+  contactMe: "Contactar vía email",
 }
 
 // Create the context

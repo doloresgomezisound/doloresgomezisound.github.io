@@ -54,44 +54,22 @@ export default function CVTab() {
           </svg>
           {translations.imdb}
         </a>
-
-        <a
-          href="https://www.linkedin.com/in/dolores-gomez-iwachiw-1b7427200/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800 transition"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 mr-2"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-            />
-          </svg>
-          {translations.linkedin}
-        </a>
       </div>
 
       <h3 className="text-2xl font-semibold text-blue-800 mb-6">{translations.works}</h3>
 
-      <div className="space-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {films.map((film) => (
           <div
             key={film.id}
             className="flex flex-col sm:flex-row bg-white border border-gray-200 rounded-lg overflow-hidden"
           >
-            <div className="sm:w-1/4 md:w-1/6">
+            <div className="sm:w-2/5 md:w-1/3 lg:w-1/4 h-48 flex items-center justify-center bg-gray-50">
               <img
                 src={process.env.PUBLIC_URL + film.posterUrl}
                 alt={`${film.title} poster`}
-                className="w-full h-full object-cover"
+                className="w-auto max-h-full object-contain"
+                style={{ maxWidth: "90%" }}
               />
             </div>
             <div className="p-4">

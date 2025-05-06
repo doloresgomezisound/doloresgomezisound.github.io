@@ -26,13 +26,6 @@ export default function AboutTab() {
           </p>
         </div>
       </div>
-      <div className="mt-8 h-64 overflow-hidden rounded-lg">
-        <img
-          src={process.env.PUBLIC_URL + "/images/fotos/cover.jpeg"}
-          alt="Film production scene"
-          className="w-full h-full object-cover"
-        />
-      </div>
     </>
   );
 }

@@ -1,10 +1,44 @@
-"use client"
+"use client";
 
-import { useLanguage } from "../contexts/LanguageContext"
+import { useState } from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 
+const DOLORES_EMAIL = "doloresgomezisound@gmail.com";
 
 export default function ContactTab() {
-  const { translations } = useLanguage()
+  const { translations } = useLanguage();
+  const [formData, setFormData] = useState({
+    //name: "",
+    //email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { subject, message } = formData;
+    const formattedSubject = encodeURIComponent(subject);
+    //const formattedMessage = encodeURIComponent(
+    //`Mensaje de: ${name}\n\n\n${message}`
+    //)
+    const formattedMessage = encodeURIComponent(message);
+    const mailtoLink = `mailto:${DOLORES_EMAIL}?subject=${formattedSubject}&body=${formattedMessage}`;
+    window.location.href = mailtoLink;
+    setFormData({
+      name: "",
+      //email: "",
+      subject: "",
+      message: "",
+    });
+  };
 
   return (
     <div>
@@ -12,9 +46,7 @@ export default function ContactTab() {
 
       <div className="grid md:grid-cols-2 gap-8">
         <div>
-          <p className="text-gray-700 mb-4">
-            {translations.contactText}
-          </p>
+          <p className="text-gray-700 mb-4">{translations.contactText}</p>
 
           <div className="mt-6 space-y-3">
             <div className="flex items-center">
@@ -39,10 +71,96 @@ export default function ContactTab() {
                 />
               </svg>
               <span>{translations.basedIn}</span>
+              <a
+                href="https://www.linkedin.com/in/dolores-gomez-iwachiw-1b7427200/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={process.env.PUBLIC_URL + "/images/linkedin.png"}
+                  alt="Argentina"
+                  className="w-8 h-8 ml-4"
+                  style={{ maxWidth: "90%" }}
+                />
+              </a>
             </div>
           </div>
         </div>
+
+        <div>
+          <h3 className="text-lg font-semibold text-blue-800 mb-4">
+            {translations.contactMe}
+          </h3>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {/* <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                {translations.name}
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div> */}
+
+            {/* <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                {translations.email}
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div> */}
+
+            <div>
+              <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                {translations.subject}
+              </label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                {translations.message}
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={5}
+                value={formData.message}
+                onChange={handleChange}
+                required
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              className="px-4 py-2 bg-blue-700 text-white rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:bg-gray-400"
+            >
+              {translations.sendMessage}
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-  )
+  );
 }

@@ -8,15 +8,21 @@ const ThemeContext = createContext()
 // Create a provider component
 export function ThemeProvider({ children }) {
   // Initialize theme from localStorage or default to 'light'
-  const [theme, setTheme] = useState("light")
+  const [theme, setTheme] = useState("dark")
 
   // Load theme from localStorage on initial render
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme")
     if (savedTheme) {
+      console.log("Saved theme:", savedTheme)
       setTheme(savedTheme)
       // Apply theme to document
       document.documentElement.classList.toggle("dark-theme", savedTheme === "dark")
+    } else {
+      // Default to dark theme if no theme is saved
+      setTheme("dark")
+      // Apply default theme to document
+      document.documentElement.classList.add("dark-theme")
     }
   }, [])
 

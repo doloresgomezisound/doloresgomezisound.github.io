@@ -133,7 +133,7 @@ export default function ContactTab() {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 dark:bg-gray-800 dark:text-white dark:border-gray-600"
               />
             </div>
 
@@ -148,7 +148,7 @@ export default function ContactTab() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 dark:bg-gray-800 dark:text-white dark:border-gray-600"
               ></textarea>
             </div>
 

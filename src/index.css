@@ -188,3 +188,15 @@ body {
 
 /* Add more theme-specific styles as needed */
 
+/* Fix for textareas in dark mode */
+.dark-theme textarea {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--accent-hover) !important;
+}
+
+.dark-theme input {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--accent-hover) !important;
+}

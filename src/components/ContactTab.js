@@ -31,13 +31,13 @@ export default function ContactTab() {
     //)
     const formattedMessage = encodeURIComponent(message);
     const mailtoLink = `mailto:${DOLORES_EMAIL}?subject=${formattedSubject}&body=${formattedMessage}`;
-    window.location.href = mailtoLink;
-    setFormData({
-      name: "",
-      //email: "",
-      subject: "",
-      message: "",
-    });
+    window.open(mailtoLink, '_blank');
+    // setFormData({
+    //   name: "",
+    //   //email: "",
+    //   subject: "",
+    //   message: "",
+    // });
   };
 
   return (

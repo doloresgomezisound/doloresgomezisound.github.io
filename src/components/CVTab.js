@@ -13,7 +13,7 @@ export default function CVTab() {
           href="https://drive.google.com/file/d/1XCW-f1J7RDNZYmYZxgInEyJmtnXaXMTs/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800 transition"
+          className="btn btn-primary"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,7 @@ export default function CVTab() {
           href="https://www.imdb.com/es/name/nm15900889/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800 transition"
+          className="btn btn-primary"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@ export default function CVTab() {
         </a>
       </div>
 
-      <h3 className="text-2xl font-semibold text-blue-800 mb-6">{translations.works}</h3>
+      <h3 className="text-2xl font-semibold text-gray-700 mb-6">{translations.works}</h3>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {films.map((film) => (
@@ -73,7 +73,7 @@ export default function CVTab() {
               />
             </div>
             <div className="p-4">
-              <h4 className="text-xl font-semibold text-blue-700">{film.title}</h4>
+              <h4 className="text-xl font-semibold text-gray-700">{film.title}</h4>
               <div className="grid grid-cols-2 gap-2 mt-2">
                 <div>
                   <p className="text-sm text-gray-500">{translations.year}</p>

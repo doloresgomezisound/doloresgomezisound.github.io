@@ -4,7 +4,7 @@ import { createContext, useState, useContext } from "react"
 
 // English translations
 const en = {
-  subtitle: "Sound Designer", // TODO confirm
+  subtitle: "Sound Director",
   about: "ABOUT",
   cv: "CV-RESUME",
   pictures: "GALLERY",
@@ -19,7 +19,7 @@ const en = {
   aboutMe4:
     "What I currently enjoy the most is working on diverse projects where the challenges are constantly changing and, due to the experience I have gained, successfully managing to adapt to them. I also love getting to know different groups of people with whom I work as a team, as I believe that collective work is essential.",
   aboutMe5:
-    "I find the fact that you can be able to tell a story through sound very thrilling, I strongly believe that the connection between technical and artistic resources can provide a project with an unprecedented sense of storytelling.",
+    "The fact that you can be able to tell a story through sound is very thrilling to me, I strongly believe that the connection between technical and artistic resources can provide a project with an unprecedented sense of storytelling.",
   downloadCV: "Download CV (PDF)",
   imdb: "IMDB Profile",
   works: "Works",
@@ -28,7 +28,7 @@ const en = {
   role: "Role",
   gallery: "Gallery",
   getInTouch: "Get In Touch",
-  contactText: "Feel free to contact me for any project inquiries, collaborations, or questions about my work.",
+  contactText: "Let's talk about your project!",
   basedIn: "Based in: Buenos Aires, Argentina",
   availableFor: "Available for: Worldwide projects",
   name: "Name",
@@ -55,7 +55,7 @@ const en = {
 
 // Spanish translations
 const es = {
-  subtitle: "Sonidista", // TODO confirm
+  subtitle: "Directora de Sonido",
   about: "SOBRE MÍ",
   cv: "CURRÍCULUM",
   pictures: "GALERÍA",
@@ -79,8 +79,7 @@ const es = {
   role: "Rol",
   gallery: "Galería",
   getInTouch: "Contacto",
-  contactText:
-    "No dudes en contactarme para cualquier consulta sobre proyectos, colaboraciones o preguntas sobre mi trabajo.",
+  contactText: "¡Conversemos sobre tu proyecto!",
   basedIn: "Ubicación: Buenos Aires, Argentina",
   availableFor: "Disponible para: Proyectos en todo el mundo",
   name: "Nombre",

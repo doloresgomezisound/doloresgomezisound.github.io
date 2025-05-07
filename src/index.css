@@ -9,3 +9,182 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Theme Variables */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --accent-color: #333333;
+  --accent-hover: #000000;
+  --border-color: #e0e0e0;
+  --card-bg: #ffffff;
+  --header-bg: linear-gradient(to right, #f5f5f5, #e0e0e0);
+
+  /* Button Colors */
+  --btn-primary-bg: #111111;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover-bg: #000000;
+  --btn-primary-hover-text: #ffffff;
+
+  --btn-secondary-bg: #e0e0e0;
+  --btn-secondary-text: #111111;
+  --btn-secondary-hover-bg: #cccccc;
+  --btn-secondary-hover-text: #000000;
+
+  --btn-outline-bg: transparent;
+  --btn-outline-text: #111111;
+  --btn-outline-border: #111111;
+  --btn-outline-hover-bg: #111111;
+  --btn-outline-hover-text: #ffffff;
+
+  --btn-danger-bg: #111111;
+  --btn-danger-text: #ffffff;
+  --btn-danger-hover-bg: #000000;
+  --btn-danger-hover-text: #ffffff;
+}
+
+/* Dark Theme Variables */
+.dark-theme {
+  --bg-primary: #111111;
+  --bg-secondary: #1a1a1a;
+  --text-primary: #f5f5f5;
+  --text-secondary: #aaaaaa;
+  --accent-color: #e0e0e0;
+  --accent-hover: #ffffff;
+  --border-color: #000000;
+  --card-bg: #1a1a1a;
+  --header-bg: linear-gradient(to right, #111111, #1a1a1a);
+
+  /* Button Colors - Dark Theme */
+  --btn-primary-bg: #e0e0e0;
+  --btn-primary-text: #111111;
+  --btn-primary-hover-bg: #ffffff;
+  --btn-primary-hover-text: #000000;
+
+  --btn-secondary-bg: #333333;
+  --btn-secondary-text: #f5f5f5;
+  --btn-secondary-hover-bg: #444444;
+  --btn-secondary-hover-text: #ffffff;
+
+  --btn-outline-bg: transparent;
+  --btn-outline-text: #e0e0e0;
+  --btn-outline-border: #e0e0e0;
+  --btn-outline-hover-bg: #e0e0e0;
+  --btn-outline-hover-text: #111111;
+
+  --btn-danger-bg: #e0e0e0;
+  --btn-danger-text: #111111;
+  --btn-danger-hover-bg: #ffffff;
+  --btn-danger-hover-text: #000000;
+}
+
+/* Apply theme variables */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bg-white {
+  background-color: var(--card-bg) !important;
+}
+
+.text-gray-700 {
+  color: var(--text-primary) !important;
+}
+
+.text-gray-600,
+.text-gray-500 {
+  color: var(--text-secondary) !important;
+}
+
+.border-gray-200,
+.border-gray-300 {
+  border-color: var(--border-color) !important;
+}
+
+/* Button Classes */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Primary Button */
+.btn-primary {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: none;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--btn-primary-hover-bg);
+  color: var(--btn-primary-hover-text);
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border: none;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--btn-secondary-hover-bg);
+  color: var(--btn-secondary-hover-text);
+}
+
+/* Outline Button */
+.btn-outline {
+  background-color: var(--btn-outline-bg);
+  color: var(--btn-outline-text);
+  border: 1px solid var(--btn-outline-border);
+}
+
+.btn-outline:hover:not(:disabled) {
+  background-color: var(--btn-outline-hover-bg);
+  color: var(--btn-outline-hover-text);
+}
+
+/* Danger Button */
+.btn-danger {
+  background-color: var(--btn-danger-bg);
+  color: var(--btn-danger-text);
+  border: none;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: var(--btn-danger-hover-bg);
+  color: var(--btn-danger-hover-text);
+}
+
+/* Button Sizes */
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+}
+
+/* Add more theme-specific styles as needed */
+

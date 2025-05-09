@@ -51,6 +51,8 @@ const en = {
   tvDocumentary: "TV Documentary",
   linkedin: "LinkedIn Profile",
   contactMe: "Contact via email",
+  emailSent: "Email sent successfully",
+  errorSendingEmail: "Error sending email. Please try again later.",
 }
 
 // Spanish translations
@@ -102,6 +104,8 @@ const es = {
   tvDocumentary: "Documental de TV",
   linkedin: "Perfil de LinkedIn",
   contactMe: "Contactar vía email",
+  emailSent: "El email se envió correctamente",
+  errorSendingEmail: "Error al enviar el email. Por favor, inténtalo de nuevo más tarde.",
 }
 
 // Create the context

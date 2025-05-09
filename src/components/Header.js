@@ -30,7 +30,7 @@ export default function Header() {
         </div>
         <div className="flex flex-col md:flex-row items-center gap-4">
           <LanguageToggle />
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
         </div>
       </div>
     </header>

@@ -3,16 +3,20 @@
 import { useState } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 
+import emailjs from "emailjs-com";
+
 const DOLORES_EMAIL = "dologomezisound@gmail.com";
 
 export default function ContactTab() {
   const { translations } = useLanguage();
   const [formData, setFormData] = useState({
-    //name: "",
-    //email: "",
+    name: "",
+    email: "",
     subject: "",
     message: "",
   });
+
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,9 +26,7 @@ export default function ContactTab() {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const { subject, message } = formData;
+  const sendWithMailto = (subject, message) => {
     const formattedSubject = encodeURIComponent(subject);
     //const formattedMessage = encodeURIComponent(
     //`Mensaje de: ${name}\n\n\n${message}`
@@ -38,6 +40,49 @@ export default function ContactTab() {
     //   subject: "",
     //   message: "",
     // });
+  };
+
+  const sendWithEmailJS = (name, email, subject, message) => {
+    const templateParams = {
+      name,
+      email,
+      subject,
+      message,
+      time: new Date().toLocaleString("es-AR"),
+    };
+
+    setSubmitting(true);
+
+    emailjs
+      .send(
+        "service_7xo31g4",
+        "template_eh0psu9",
+        templateParams,
+        "B8zzX2CojnXvSIGCZ"
+      )
+      .then(
+        (response) => {
+          alert(translations.emailSent);
+          setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          });
+        },
+        (error) => {
+          alert(translations.errorSendingEmail);
+        }
+      ).finally(() => {
+        setSubmitting(false);
+      });
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { name, email, subject, message } = formData;
+    //sendWithMailto(subject, message);
+    sendWithEmailJS(name, email, subject, message);
   };
 
   return (
@@ -92,7 +137,7 @@ export default function ContactTab() {
             {translations.contactMe}
           </h3>
           <form onSubmit={handleSubmit} className="space-y-4">
-            {/* <div>
+            <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                 {translations.name}
               </label>
@@ -105,9 +150,9 @@ export default function ContactTab() {
                 required
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
               />
-            </div> */}
+            </div>
 
-            {/* <div>
+            <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                 {translations.email}
               </label>
@@ -120,7 +165,7 @@ export default function ContactTab() {
                 required
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
               />
-            </div> */}
+            </div>
 
             <div>
               <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
